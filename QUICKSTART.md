@@ -218,9 +218,17 @@ docker-compose exec backend python manage.py create_english_courses
 # 상세 모듈 추가 (일반 모듈을 구체적인 내용으로 대체)
 docker-compose exec backend python manage.py add_detailed_modules
 
+# 50개 추가 코스 생성 (Rust, Kotlin, Swift, 클라우드, 게임, 창작, 금융 등)
+docker-compose exec backend python manage.py create_50_more_courses
+
+# 각 코스에 50개 모듈 추가 (초급-중급-고급 상세 커리큘럼)
+docker-compose exec backend python manage.py add_50_modules_per_course
+
 # 또는 Makefile 사용
 make english-courses
 make detailed-modules
+make create-50-more
+make add-50-modules
 ```
 
 ## 지원

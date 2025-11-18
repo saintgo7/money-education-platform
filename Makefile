@@ -13,6 +13,8 @@ help:
 	@echo "  sample-data       - Create sample data"
 	@echo "  english-courses   - Create English education courses"
 	@echo "  detailed-modules  - Add detailed modules to all courses"
+	@echo "  create-50-more    - Create 50 additional diverse courses"
+	@echo "  add-50-modules    - Add 50 modules to each course"
 	@echo ""
 
 setup:
@@ -70,3 +72,13 @@ detailed-modules:
 	@echo "Adding detailed modules to all courses..."
 	@docker-compose exec backend python manage.py add_detailed_modules
 	@echo "✅ Detailed modules added"
+
+create-50-more:
+	@echo "Creating 50 additional courses..."
+	@docker-compose exec backend python manage.py create_50_more_courses
+	@echo "✅ 50 more courses created"
+
+add-50-modules:
+	@echo "Adding 50 modules to each course..."
+	@docker-compose exec backend python manage.py add_50_modules_per_course
+	@echo "✅ 50 modules added to each course"
