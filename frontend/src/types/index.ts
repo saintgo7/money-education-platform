@@ -32,6 +32,11 @@ export interface Course {
   average_rating: string
   rating_count: number
   is_published: boolean
+  learning_objectives?: string[]
+  prerequisites?: string
+  total_duration_minutes?: number
+  created_at?: string
+  updated_at?: string
 }
 
 export interface Module {
@@ -90,6 +95,53 @@ export interface Quiz {
   description: string
   passing_score: number
   time_limit_minutes: number
+  questions?: QuizQuestion[]
+}
+
+export interface QuizQuestion {
+  id: number
+  quiz: number
+  question_text: string
+  question_type: 'multiple_choice' | 'true_false' | 'short_answer'
+  points: number
+  order: number
+  options?: string[]
+  correct_answer?: string
+}
+
+export interface QuizAttempt {
+  id: number
+  quiz: number
+  student: number
+  score: number
+  total_score: number
+  is_passed: boolean
+  started_at: string
+  completed_at?: string
+  answers: any
+}
+
+export interface Assignment {
+  id: number
+  course: number
+  lesson: number
+  title: string
+  description: string
+  due_date?: string
+  max_points: number
+  rubric?: any
+}
+
+export interface Submission {
+  id: number
+  assignment: number
+  student: number
+  content: string
+  file_url?: string
+  score?: number
+  feedback?: string
+  submitted_at: string
+  graded_at?: string
 }
 
 export interface Certificate {
