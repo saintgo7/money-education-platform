@@ -224,11 +224,23 @@ docker-compose exec backend python manage.py create_50_more_courses
 # 각 코스에 50개 모듈 추가 (초급-중급-고급 상세 커리큘럼)
 docker-compose exec backend python manage.py add_50_modules_per_course
 
+# 언어 교육 과정 추가
+docker-compose exec backend python manage.py create_korean_courses     # 한국어 20개
+docker-compose exec backend python manage.py create_chinese_courses    # 중국어 15개
+docker-compose exec backend python manage.py create_japanese_courses   # 일본어 15개
+
+# 자격증 대비 과정 추가
+docker-compose exec backend python manage.py create_certification_courses  # 자격증 30개
+
 # 또는 Makefile 사용
-make english-courses
-make detailed-modules
-make create-50-more
-make add-50-modules
+make english-courses           # 영어 10개
+make detailed-modules          # 상세 모듈 추가
+make create-50-more            # 추가 50개 코스
+make add-50-modules            # 50개 모듈/코스
+make korean-courses            # 한국어 20개
+make chinese-courses           # 중국어 15개
+make japanese-courses          # 일본어 15개
+make certification-courses     # 자격증 30개
 ```
 
 ## 지원

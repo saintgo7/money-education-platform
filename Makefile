@@ -3,18 +3,22 @@
 help:
 	@echo "Money Education Platform - Commands"
 	@echo ""
-	@echo "  setup             - Initial setup (create env files)"
-	@echo "  dev               - Start development servers"
-	@echo "  test              - Run tests"
-	@echo "  clean             - Clean up cache files"
-	@echo "  docker-up         - Start Docker containers"
-	@echo "  docker-down       - Stop Docker containers"
-	@echo "  migrate           - Run database migrations"
-	@echo "  sample-data       - Create sample data"
-	@echo "  english-courses   - Create English education courses"
-	@echo "  detailed-modules  - Add detailed modules to all courses"
-	@echo "  create-50-more    - Create 50 additional diverse courses"
-	@echo "  add-50-modules    - Add 50 modules to each course"
+	@echo "  setup                  - Initial setup (create env files)"
+	@echo "  dev                    - Start development servers"
+	@echo "  test                   - Run tests"
+	@echo "  clean                  - Clean up cache files"
+	@echo "  docker-up              - Start Docker containers"
+	@echo "  docker-down            - Stop Docker containers"
+	@echo "  migrate                - Run database migrations"
+	@echo "  sample-data            - Create sample data"
+	@echo "  english-courses        - Create 10 English education courses"
+	@echo "  detailed-modules       - Add detailed modules to all courses"
+	@echo "  create-50-more         - Create 50 additional diverse courses"
+	@echo "  add-50-modules         - Add 50 modules to each course"
+	@echo "  korean-courses         - Create 20 Korean language courses"
+	@echo "  chinese-courses        - Create 15 Chinese language courses"
+	@echo "  japanese-courses       - Create 15 Japanese language courses"
+	@echo "  certification-courses  - Create 30 certification courses"
 	@echo ""
 
 setup:
@@ -82,3 +86,23 @@ add-50-modules:
 	@echo "Adding 50 modules to each course..."
 	@docker-compose exec backend python manage.py add_50_modules_per_course
 	@echo "✅ 50 modules added to each course"
+
+korean-courses:
+	@echo "Creating 20 Korean language courses..."
+	@docker-compose exec backend python manage.py create_korean_courses
+	@echo "✅ Korean courses created"
+
+chinese-courses:
+	@echo "Creating 15 Chinese language courses..."
+	@docker-compose exec backend python manage.py create_chinese_courses
+	@echo "✅ Chinese courses created"
+
+japanese-courses:
+	@echo "Creating 15 Japanese language courses..."
+	@docker-compose exec backend python manage.py create_japanese_courses
+	@echo "✅ Japanese courses created"
+
+certification-courses:
+	@echo "Creating 30 certification courses..."
+	@docker-compose exec backend python manage.py create_certification_courses
+	@echo "✅ Certification courses created"
