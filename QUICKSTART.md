@@ -77,6 +77,9 @@ python manage.py create_sample_data
 # 영어 교육 코스 생성 (선택)
 python manage.py create_english_courses
 
+# 모든 코스에 상세 모듈 추가 (선택)
+python manage.py add_detailed_modules
+
 # 슈퍼유저 생성
 python manage.py createsuperuser
 
@@ -212,8 +215,12 @@ cd frontend && npm run test
 # 영어 교육 코스 생성
 docker-compose exec backend python manage.py create_english_courses
 
+# 상세 모듈 추가 (일반 모듈을 구체적인 내용으로 대체)
+docker-compose exec backend python manage.py add_detailed_modules
+
 # 또는 Makefile 사용
 make english-courses
+make detailed-modules
 ```
 
 ## 지원
