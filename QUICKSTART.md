@@ -74,6 +74,9 @@ python manage.py migrate
 # 샘플 데이터 생성 (선택)
 python manage.py create_sample_data
 
+# 영어 교육 코스 생성 (선택)
+python manage.py create_english_courses
+
 # 슈퍼유저 생성
 python manage.py createsuperuser
 
@@ -205,6 +208,12 @@ docker-compose exec backend pytest
 
 # 프론트엔드 테스트
 cd frontend && npm run test
+
+# 영어 교육 코스 생성
+docker-compose exec backend python manage.py create_english_courses
+
+# 또는 Makefile 사용
+make english-courses
 ```
 
 ## 지원

@@ -3,13 +3,15 @@
 help:
 	@echo "Money Education Platform - Commands"
 	@echo ""
-	@echo "  setup        - Initial setup (create env files)"
-	@echo "  dev          - Start development servers"
-	@echo "  test         - Run tests"
-	@echo "  clean        - Clean up cache files"
-	@echo "  docker-up    - Start Docker containers"
-	@echo "  docker-down  - Stop Docker containers"
-	@echo "  migrate      - Run database migrations"
+	@echo "  setup            - Initial setup (create env files)"
+	@echo "  dev              - Start development servers"
+	@echo "  test             - Run tests"
+	@echo "  clean            - Clean up cache files"
+	@echo "  docker-up        - Start Docker containers"
+	@echo "  docker-down      - Stop Docker containers"
+	@echo "  migrate          - Run database migrations"
+	@echo "  sample-data      - Create sample data"
+	@echo "  english-courses  - Create English education courses"
 	@echo ""
 
 setup:
@@ -57,3 +59,8 @@ sample-data:
 	@echo "Creating sample data..."
 	@docker-compose exec backend python manage.py create_sample_data
 	@echo "✅ Sample data created"
+
+english-courses:
+	@echo "Creating English education courses..."
+	@docker-compose exec backend python manage.py create_english_courses
+	@echo "✅ English courses created"
